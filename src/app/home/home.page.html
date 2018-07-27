@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      GitHub Searcher
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Github account</ion-label>
+    <ion-input (keyup)="searchData()" [(ngModel)]="username"></ion-input>
+
+
+  </ion-item>
+
+
+  <ion-card *ngIf="user">
+    <ion-img src="{{user.avatar_url}}"></ion-img>
+
+    <ion-card-content>
+      <ion-card-title>{{user.name}}</ion-card-title>
+
+      <p>{{user.blog}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list>
+
+    <ion-card *ngFor="let repo of repos">
+
+      <ion-card-content>
+          <ion-badge color="primary">{{repo.followers}} Followers</ion-badge>
+          <ion-badge color="secondary">{{repo.issues}} issues</ion-badge>
+          <ion-badge color="secondary">{{repo.forks}} forks</ion-badge>
+        <ion-card-title>{{repo.name}}</ion-card-title>
+
+        <!-- <p>{{repo.blog}}</p> -->
+
+
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+</ion-content>

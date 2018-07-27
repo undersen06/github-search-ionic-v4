@@ -1,0 +1,7 @@
+{
+  "name": "github-search",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
